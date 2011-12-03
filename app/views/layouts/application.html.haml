@@ -7,8 +7,12 @@
     = csrf_meta_tags
 
   %body
-    .flash
-      %p.notice= notice
-      %p.alert= alert
+    #page
+      .header
+        %h1 Pipleline
+      .flash
+        %p.notice= notice
+        %p.alert= alert
+      .body
+        = yield
 
-    = yield

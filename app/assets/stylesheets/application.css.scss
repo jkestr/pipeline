@@ -1,8 +1,90 @@
 @import "bourbon";
 
-html, body {
+html {
+  margin: 0;
+}
+body {
+  margin: 10px;
+  font-family: Verdana;
+  background-image: url('/images/grey_pattern.png');
+}
+
+body > #page {
+}
+
+body > #page > .header {
+  @include display-box;
+}
+
+#page > .header > h1 {
+  color: #AEBBBB;
+  line-height: 1em;
   margin: 0;
 }
 
+#page > .body > h1 {
+  color: #AEBBBB;
+  font-size: 1.3em;
+}
 
+#page a {
+  color: #AEBBBB;
+  text-decoration: none;
+  &:hover {
+    color: #88D525;
+  }
+}
+
+.section.authenticate {
+  background-color: #FD476D;
+  background-color: rgba(255, 98, 128, 0.2);
+  padding: 8px;
+  @include inline-block;
+  @include border-radius(8px);
+  a {
+    display: block;
+  }
+}
+
+form .input {
+  margin-bottom: 10px;
+}
+
+form .input label {
+  display: block;
+  color: #AEBBBB;
+}
+
+.section.articles {
+  > .body {
+  }
+  .article {
+    @include display-box;
+    @include box-orient(horizontal);
+    margin-bottom: 10px;
+    .author {
+      width: 60px;
+      height: 60px;
+      background-color: #333;
+      margin-right: 10px;
+    }
+    .header {
+      @include box-flex(6);
+      h1 {
+        font-size: 1em;
+      }
+    }
+    .act {
+      @include box-flex(1);
+      text-align: right;
+    }
+  }
+}
+
+.section.articles > a {
+  background-repeat: no-repeat;
+  background-image: url('/images/icons/piggy-bank.png');
+  background-position: center left;
+  padding-left: 20px;
+}
 

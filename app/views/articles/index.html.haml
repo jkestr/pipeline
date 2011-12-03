@@ -1,18 +1,16 @@
-%h1 Listing articles
+.section.articles
 
-%table
-  %tr
-    %th
-    %th
-    %th
+  .body
+    - @articles.each do |article|
+      .article
+        .author
+          &nbsp;
+        .header
+          %h1= link_to article.title, article
+        .act
+          = link_to 'Show', article
+          = link_to 'Edit', edit_article_path(article)
+          = link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete
 
-  - @articles.each do |article|
-    %tr
-      %td= link_to article.title, article
-      %td= link_to 'Show', article
-      %td= link_to 'Edit', edit_article_path(article)
-      %td= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete
+  = link_to 'New Article', new_article_path
 
-%br
-
-= link_to 'New Article', new_article_path
