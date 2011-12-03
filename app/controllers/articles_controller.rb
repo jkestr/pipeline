@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
 
   before_filter :authenticate_user!
+  rescue_from DataMapper::ObjectNotFoundError, :with => :record_not_found
 
   # GET /articles
   # GET /articles.xml
@@ -12,7 +13,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.xml
   def show
-    @article = article_get(params[:id])
+    @article = article_get!(params[:id])
     respond_with(@article)
   end
 
@@ -49,7 +50,13 @@ class ArticlesController < ApplicationController
   def destroy
     @article = article_get(params[:id])
     @article.destroy
+    #Rails.logger.debug "Deleting tags #{@article.send(:taggings).destroy!}"
+    #Rails.logger.debug "Deleting article? #{@article.destroy!}"
     respond_with(@article)
+  end
+
+  def record_not_found
+    redirect_to articles_path, :flash => {:alert => "Article not found"}
   end
 
   private
@@ -64,6 +71,10 @@ class ArticlesController < ApplicationController
 
   def article_get(id)
     current_user.articles.get id
+  end
+
+  def article_get!(id)
+    current_user.articles.get! id
   end
 
   def article_create(params)
