@@ -23,6 +23,8 @@ GEM
       multi_json (~> 1.0)
     addressable (2.2.6)
     bcrypt-ruby (3.0.1)
+    bourbon (1.2.0)
+      sass (>= 3.1)
     builder (3.0.0)
     columnize (0.3.5)
     data_objects (0.10.7)
@@ -182,6 +184,7 @@ DEPENDENCIES
   actionmailer (~> 3.1.1)
   actionpack (~> 3.1.1)
   activesupport (~> 3.1.1)
+  bourbon
   dm-aggregates (~> 1.2.0)
   dm-constraints (~> 1.2.0)
   dm-devise

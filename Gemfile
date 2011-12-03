@@ -11,6 +11,7 @@ gem 'tzinfo'
 
 gem 'dm-rails',               DM_VERSION
 
+gem 'bourbon'
 
 # You can use any of the other available database adapters.
 # This is only a small excerpt of the list of all available adapters
@@ -26,9 +27,9 @@ gem 'dm-rails',               DM_VERSION
 # gem 'dm-oracle-adapter',    DM_VERSION
 # gem 'dm-sqlserver-adapter', DM_VERSION
 
-#group(:production) do
+group(:production) do
   gem 'dm-postgres-adapter',  DM_VERSION
-#end
+end
 
 gem 'dm-migrations',        DM_VERSION
 gem 'dm-types',             DM_VERSION
