@@ -45,9 +45,11 @@ gem 'simple_form'
 
 group(:development, :test) do
   gem 'ruby-debug'
-  
+  #gem 'ruby-prof'  
   gem 'dm-sqlite-adapter', DM_VERSION
   
+  gem 'heroku'
+    
   # Uncomment this if you want to use rspec for testing your application
 
   # gem 'rspec-rails', '~> 2.0.1'

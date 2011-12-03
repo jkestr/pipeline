@@ -7,6 +7,6 @@ class Article
 
   belongs_to :author, 'User', :constraint => :skip
 
-  has_tags_on :tags, :constraint => :destroy
+  has_tags_on :tags
 
 end
