@@ -3,7 +3,6 @@
   %head
     %title Do
     = stylesheet_link_tag "application"
-    = javascript_include_tag "/javascripts/application"
     = csrf_meta_tags
 
   %body
@@ -15,4 +14,6 @@
         %p.alert= alert
       .body
         = yield
+
+    = javascript_include_tag "application"
 

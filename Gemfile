@@ -46,6 +46,7 @@ gem 'haml-rails'
 gem 'sass-rails'
 gem 'responders'
 gem 'simple_form'
+gem 'jquery-rails'
 
 group(:development, :test) do
   gem 'ruby-debug'
