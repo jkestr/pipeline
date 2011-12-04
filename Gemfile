@@ -48,6 +48,10 @@ gem 'responders'
 gem 'simple_form'
 gem 'jquery-rails'
 
+group(:assets) do
+  gem 'uglifier'
+end
+
 group(:development, :test) do
   gem 'ruby-debug'
   #gem 'ruby-prof'  
