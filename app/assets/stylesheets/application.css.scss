@@ -83,6 +83,16 @@ form .input label {
       @include box-flex(2);
       h1 {
         font-size: 1em;
+        input {
+          background: inherit;
+          border: 0;
+          font-size: inherit;
+          color: inherit;
+          font-weight: inherit;
+          &:focus {
+            outline: none;
+          }
+        }
       }
     }
 
@@ -95,7 +105,7 @@ form .input label {
 
 }
 
-.section.articles > a {
+.section.articles > .body > a.new {
   background-repeat: no-repeat;
   background-image: url('/images/icons/piggy-bank.png');
   background-position: center left;

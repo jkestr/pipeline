@@ -108,6 +108,9 @@ GEM
       term-ansicolor (~> 1.0.5)
     hike (1.2.1)
     i18n (0.6.0)
+    jquery-rails (1.0.17)
+      railties (~> 3.0)
+      thor (~> 0.14)
     json (1.6.1)
     json_pure (1.6.3)
     launchy (2.0.5)
@@ -200,6 +203,7 @@ DEPENDENCIES
   dm-validations (~> 1.2.0)
   haml-rails
   heroku
+  jquery-rails
   railties (~> 3.1.1)
   responders
   ruby-debug
