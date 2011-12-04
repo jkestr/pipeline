@@ -2,7 +2,8 @@ Do::Application.routes.draw do
 
 
   devise_for :users do
-    root :to => 'articles#index'
+    get '/' => "articles#index", :as => :user_root
+    #user_root :to => 'articles#index'
   end
 
   resources :articles

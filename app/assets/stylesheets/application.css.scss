@@ -5,19 +5,25 @@ html {
 }
 body {
   margin: 10px;
+  color: #AEBBBB;
   font-family: Verdana;
   background-image: url('/images/grey_pattern.png');
 }
 
-body > #page {
+a {
+  color: #AEBBBB;
+  text-decoration: none;
+  &:hover {
+    color: #88D525;
+  }
 }
+
 
 body > #page > .header {
   @include display-box;
 }
 
 #page > .header > h1 {
-  color: #AEBBBB;
   line-height: 1em;
   margin: 0;
 }
@@ -27,13 +33,6 @@ body > #page > .header {
   font-size: 1.3em;
 }
 
-#page a {
-  color: #AEBBBB;
-  text-decoration: none;
-  &:hover {
-    color: #88D525;
-  }
-}
 
 .section.authenticate {
   background-color: #FD476D;
@@ -55,12 +54,24 @@ form .input label {
   color: #AEBBBB;
 }
 
-.section.articles {
+.section.articles.index {
+  @include display-box;
+  @include box-orient(horizontal);
   > .body {
+    @include box-ordinal-group(2);
+    @include box-flex(1);
   }
+  > .navigation {
+    @include box-ordinal-group(1);
+    width: 160px;
+  }
+
   .article {
     @include display-box;
     @include box-orient(horizontal);
+    @include border-radius(6px);
+    background-color: rgba(200, 200, 200, 0.2);
+    padding: 10px;
     margin-bottom: 10px;
     .author {
       width: 60px;
@@ -69,16 +80,19 @@ form .input label {
       margin-right: 10px;
     }
     .header {
-      @include box-flex(6);
+      @include box-flex(2);
       h1 {
         font-size: 1em;
       }
     }
+
     .act {
       @include box-flex(1);
       text-align: right;
     }
+
   }
+
 }
 
 .section.articles > a {
@@ -87,4 +101,50 @@ form .input label {
   background-position: center left;
   padding-left: 20px;
 }
+
+.section.dialog {
+  width: 400px;
+  @include display-box;
+  @include box-orient(vertical);
+  @include border-radius(8px);
+  @include box-shadow(1px 1px 8px 0 #666);
+  padding: 8px;
+  margin: 14% auto 0 auto;
+  background-color: white;
+  border: 1px solid #333;
+  position: relative;
+  a.close {
+    @include inline-block;
+    top: 0;
+    right: 0;
+    position: absolute;
+    font-size: 0.8em;
+    padding: 5px;
+  }
+}
+
+label.article.title {
+  display: none;
+}
+
+#article_title {
+  width: 90%;
+  border: 0;
+  padding: 0;
+  font-size: 1em;  
+}
+.section.articles.new.dialog,
+.section.articles.edit.dialog { 
+  > .header h1 {
+    display: none;
+  }
+}
+
+input[type=submit], input[type=button], a.button {
+  @include linear-gradient(#c7dd54, #AEC347);
+  border: 0;
+  @include border-radius(5px);
+  font-size: 0.9em;
+}
+
 

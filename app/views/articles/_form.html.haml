@@ -6,7 +6,7 @@
         - @article.errors.full_messages.each do |msg|
           %li= msg
 
-  = f.input :title
+  = f.input :title, :label_html => {:class => "article title"}
   = f.input :tag_collection, :required => false
 
   .actions

@@ -1,5 +1,9 @@
-%h1 New article
+.section.articles.new.dialog
+  .header
+    %h1 New article
+ 
+  .body
+    = render 'form'
 
-= render 'form'
+    = link_to 'Close', articles_path, :class => "close"
 
-= link_to 'Back', articles_path

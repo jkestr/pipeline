@@ -1,16 +1,20 @@
-.section.articles
-
+.section.articles.index
   .body
-    - @articles.each do |article|
-      .article
-        .author
-          &nbsp;
-        .header
-          %h1= link_to article.title, article
-        .act
-          = link_to 'Show', article
-          = link_to 'Edit', edit_article_path(article)
-          = link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete
+    .articles
+      - @articles.each do |article|
+        .article
+          .author
+            &nbsp;
+          .header
+            %h1= link_to article.title, article
+            - article.tags.each do |t|
+              %span= t.name
+          .act
+            = link_to 'Show', article
+            = link_to 'Edit', edit_article_path(article)
+            = link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete
 
-  = link_to 'New Article', new_article_path
+    = link_to 'New Article', new_article_path
+
+  .navigation
 

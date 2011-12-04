@@ -1,7 +1,8 @@
-%h1 Editing article
+.section.articles.edit.dialog
+  .header
+    %h1 Editing article
 
-= render 'form'
+  .body
+    = render 'form'
+    = link_to 'Close', articles_path, :class => "close"
 
-= link_to 'Show', @article
-\|
-= link_to 'Back', articles_path
